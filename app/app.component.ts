@@ -20,13 +20,7 @@ import {UserDetailComponent} from './user-detail.component';
 })
 export class AppComponent {
     public title = 'Skeleton App';
-    public user:User = {
-        id: 1,
-        name: 'Admin'
-    };
-
     public users = USERS;
-
     public selectedUser:User;
 
     onSelect(user:User) {
