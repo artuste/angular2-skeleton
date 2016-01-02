@@ -1,13 +1,14 @@
 <html>
 <head>
     <title>Angular 2 Basic Application</title>
+    <link href="styles/main.css" rel="stylesheet" />
 
     <!-- 1. Load libraries -->
     <script src="node_modules/angular2/bundles/angular2-polyfills.js"></script>
     <script src="node_modules/systemjs/dist/system.src.js"></script>
     <script src="node_modules/rxjs/bundles/Rx.js"></script>
+    <script src="node_modules/es6-shim/es6-shim.js"></script>
     <script src="node_modules/angular2/bundles/angular2.dev.js"></script>
-
     <!-- 2. Configure SystemJS -->
     <script>
         System.config({
@@ -15,6 +16,16 @@
                 app: {
                     format: 'register',
                     defaultExtension: 'js'
+                }
+            },
+            paths: {
+                "npm:*": "jspm_packages/npm/*",
+                "github:*": "jspm_packages/github/*"
+            },
+            map: {
+                "twbs/bootstrap": "github:twbs/bootstrap@3.3.6",
+                "github:twbs/bootstrap@3.3.6": {
+                    "jquery": "github:components/jquery@2.1.4"
                 }
             }
         });
@@ -26,7 +37,7 @@
 
 <!-- 3. Display the application -->
 <body>
-    <app>Loading...</app>
+<app>Loading...</app>
 </body>
 
 </html>
