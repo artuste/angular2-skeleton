@@ -1,8 +1,9 @@
 import {Component, OnInit} from 'angular2/core';
-import {User} from './user';
-import {UserDetailComponent} from './user-detail.component';
-import {UserService} from './user.service';
 
+//Users
+import {User} from './users/user';
+import {UserDetailComponent} from './users/user-detail.component';
+import {UserService} from './users/user.service';
 
 @Component({
     selector: 'app',
