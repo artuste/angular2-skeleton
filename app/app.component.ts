@@ -1,6 +1,8 @@
-import {Component} from 'angular2/core';
+import {Component, OnInit} from 'angular2/core';
 import {User} from './user';
 import {UserDetailComponent} from './user-detail.component';
+import {UserService} from './user.service';
+
 
 @Component({
     selector: 'app',
@@ -16,28 +18,26 @@ import {UserDetailComponent} from './user-detail.component';
     </ul>
    <user-detail [user]="selectedUser"></user-detail>
   `,
-    directives: [UserDetailComponent]
+    directives: [UserDetailComponent],
+    providers: [UserService]
 })
 export class AppComponent {
     public title = 'Skeleton App';
-    public users = USERS;
+    public users:User[];
     public selectedUser:User;
+
+    constructor(private _userService:UserService) {}
+
+    ngOnInit() {
+        this.getUsers();
+    }
+
+    getUsers() {
+        this._userService.getUsers()
+        .then(users => this.users = users)
+    }
 
     onSelect(user:User) {
         this.selectedUser = user;
     }
 }
-
-
-var USERS:User[] = [
-    {"id": 11, "name": "Mr. Nice"},
-    {"id": 12, "name": "Narco"},
-    {"id": 13, "name": "Bombasto"},
-    {"id": 14, "name": "Celeritas"},
-    {"id": 15, "name": "Magneta"},
-    {"id": 16, "name": "RubberMan"},
-    {"id": 17, "name": "Dynama"},
-    {"id": 18, "name": "Dr IQ"},
-    {"id": 19, "name": "Magma"},
-    {"id": 20, "name": "Tornado"}
-];
