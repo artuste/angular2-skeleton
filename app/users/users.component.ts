@@ -7,7 +7,6 @@ import {UserService} from './user.service';
 @Component({
     selector: 'users',
     template: `
-    <h1>{{title}}</h1>
     <h2>My Users</h2>
     <ul class="users">
       <li *ngFor="#user of users"
@@ -22,7 +21,6 @@ import {UserService} from './user.service';
     providers: [UserService]
 })
 export class UsersComponent {
-    public title = 'Skeleton App';
     public users:User[];
     public selectedUser:User;
 

@@ -1,8 +1,9 @@
 <html>
 <head>
     <title>Angular 2 Basic Application</title>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
     <link href="styles/main.css" rel="stylesheet" />
-    <link href="jspm_packages/github/twbs/bootstrap@3.3.6/css/bootstrap.min.css" rel="stylesheet" />
 
     <!-- 1. Load libraries -->
     <script src="node_modules/angular2/bundles/angular2-polyfills.js"></script>
@@ -18,16 +19,6 @@
                     format: 'register',
                     defaultExtension: 'js'
                 }
-            },
-            paths: {
-                "npm:*": "jspm_packages/npm/*",
-                "github:*": "jspm_packages/github/*"
-            },
-            map: {
-                "twbs/bootstrap": "github:twbs/bootstrap@3.3.6",
-                "github:twbs/bootstrap@3.3.6": {
-                    "jquery": "github:components/jquery@2.1.4"
-                }
             }
         });
         System.import('app/boot')
@@ -38,7 +29,7 @@
 
 <!-- 3. Display the application -->
 <body>
-<app>Loading...</app>
+    <app>Loading...</app>
 </body>
 
 </html>

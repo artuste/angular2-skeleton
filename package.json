@@ -25,7 +25,8 @@
   },
   "jspm": {
     "dependencies": {
-      "twbs/bootstrap": "github:twbs/bootstrap@^3.3.6"
+    },
+    "devDependencies": {
     }
   }
 }
