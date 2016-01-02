@@ -1,1 +1,1 @@
-Angular2 Basic Application
+Angular2 Skeleton
