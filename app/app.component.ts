@@ -1,44 +1,11 @@
 import {Component, OnInit} from 'angular2/core';
-
-//Users
-import {User} from './users/user';
-import {UserDetailComponent} from './users/user-detail.component';
-import {UserService} from './users/user.service';
+import {UsersComponent} from './users/users.component';
 
 @Component({
     selector: 'app',
-    template: `
-    <h1>{{title}}</h1>
-    <h2>My Users</h2>
-    <ul class="users">
-      <li *ngFor="#user of users"
-        [class.selected]="user === selectedUser"
-        (click)="onSelect(user)">
-        <span class="badge">{{user.id}}</span> {{user.name}}
-      </li>
-    </ul>
-   <user-detail [user]="selectedUser"></user-detail>
-  `,
-    directives: [UserDetailComponent],
-    providers: [UserService]
+    template: `<users></users>`,
+    directives: [UsersComponent]
 })
 export class AppComponent {
-    public title = 'Skeleton App';
-    public users:User[];
-    public selectedUser:User;
 
-    constructor(private _userService:UserService) {}
-
-    ngOnInit() {
-        this.getUsers();
-    }
-
-    getUsers() {
-        this._userService.getUsers()
-        .then(users => this.users = users)
-    }
-
-    onSelect(user:User) {
-        this.selectedUser = user;
-    }
 }
