@@ -1,12 +1,12 @@
 import {Component} from 'angular2/core';
 
 @Component({
-    selector: 'example',
-    templateUrl: './app/example/example.html',
-    directives: [ExampleComponent]
+    selector: 'dashboard',
+    templateUrl: './app/dashboard/dashboard.html',
+    directives: [DashboardComponent]
 })
 
-export class ExampleComponent {
+export class DashboardComponent {
     onClick(value) {
         console.log('value =>', value);
     }
