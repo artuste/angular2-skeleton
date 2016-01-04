@@ -6,17 +6,7 @@ import {UserService} from './user.service';
 
 @Component({
     selector: 'users',
-    template: `
-    <h2>My Users</h2>
-    <ul class="users">
-      <li *ngFor="#user of users"
-        [class.selected]="user === selectedUser"
-        (click)="onSelect(user)">
-        <span class="badge">{{user.id}}</span> {{user.name}}
-      </li>
-    </ul>
-   <user-detail [user]="selectedUser"></user-detail>
-  `,
+    templateUrl: './app/users/users.component.tpl.html',
     directives: [UserDetailComponent],
     providers: [UserService]
 })

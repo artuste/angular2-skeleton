@@ -1,0 +1,7 @@
+<ul>
+    <li *ngFor="#item of list">
+        {{ item.name }}
+    </li>
+</ul>
+<input type="text" #textoAbc>
+<button class="btn btn-default" (click)="onClick(textoAbc.value)">Click</button>
